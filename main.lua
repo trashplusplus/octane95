@@ -8,6 +8,10 @@ require('coin')
 
 function love.load()
 
+	min_dt = 1/60;
+   	next_time = love.timer.getTime();
+	
+
 	math.randomseed(os.time())
 	
 	menu:load()
@@ -20,7 +24,7 @@ end
 
 
 function love.update(dt)
-	
+	next_time = next_time + min_dt
 	menu:update()
 	state_check(gamestate)
 		
@@ -55,9 +59,9 @@ function state_check(gamestate)
 		menu:draw()
 	elseif gamestate == "game" then
 		game:draw()
+		coin:draw()		
 		player:update()
-		player:draw()
-		coin:draw()
+		player:draw()		
 		enemy:update()
 		enemy:draw()
 		

@@ -1,0 +1,7 @@
+menu = {}
+
+function menu:draw()
+
+	love.graphics.print("Press Enter to start", ce)
+
+end

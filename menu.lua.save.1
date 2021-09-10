@@ -1,0 +1,15 @@
+menu = {}
+
+function menu:load()
+	
+	pixel_font = love.graphics.newFont("res/fonts/Pixel.ttf", 25)	
+
+end
+
+function menu:draw()
+		
+	
+love.graphics.setFont(pixel_font)
+	love.graphics.print("Press Enter to start", love.graphics.getWidth() / 6, love.graphics.getHeight() / 2)
+	
+end
