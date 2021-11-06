@@ -88,3 +88,19 @@ function love.keypressed(key)
 	end
 	
 end
+
+function love.joystickpressed(joyStick, btn)
+	state_check(gamestate)
+	if joyStick:isGamepadDown("a") then
+		gamestate = "game"
+	elseif joyStick:isGamepadDown("start") then
+		love.event.quit()
+	end
+	
+	if gamestate == "game" then
+		if joyStick:isGamepadDown("a") then
+			player.xspeed = player.xspeed + 1.5
+		end
+	end	
+end
+
