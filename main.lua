@@ -22,7 +22,7 @@ function love.load()
 	
 end
 
---test
+--tes
 function love.update(dt)
 	next_time = next_time + min_dt
 	menu:update()
